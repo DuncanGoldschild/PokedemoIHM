@@ -1,0 +1,20 @@
+<div class="container">
+  <input placeholder="Q1" [(ngModel)]="id">
+  <input placeholder="Q2" readonly [(ngModel)]="id">
+  <p>{{id}}</p>
+  <h4>Liste des pokemons: {{selectedPokemon}}</h4>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="nameFilter" placeholder="Filter by name"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="idFilter" placeholder="Filter by id"></textarea>
+  </mat-form-field>
+  <select [(ngModel)]="selectedPokemon">
+    <option
+      *ngFor="let pokemon of pokemons | filterPokemonPipe : 'name' : nameFilter | filterPokemonPipe : 'id' : idFilter">
+      {{pokemon.name}}
+    </option>
+  </select>
+  <button mat-button (click)="searchPokemon(selectedPokemon)">Search</button>
+  <app-poke-card *ngIf="searched" [data]="searchedPokemon"></app-poke-card>
+</div>

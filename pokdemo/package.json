@@ -23,7 +23,7 @@
     "@angular/router": "~7.2.15",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "npm-audit-resolver": "^1.5.0",
     "primeng": "^7.1.3",
     "rxjs": "~6.5.2",
